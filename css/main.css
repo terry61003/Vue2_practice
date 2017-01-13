@@ -5,7 +5,8 @@
   font-weight: 500;
   src: url(../lib/font/NotoSansTC-Medium.otf); }
 
-html, body {
+html,
+body {
   font-family: "Noto Sans TC", "微軟正黑體";
   font-size: 100%;
   width: 100%;
@@ -13,35 +14,48 @@ html, body {
   background: #009487;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none; }
-  html ::-webkit-scrollbar, body ::-webkit-scrollbar {
+  html ::-webkit-scrollbar,
+  body ::-webkit-scrollbar {
     display: none; }
-  html ul, body ul {
+  html ul,
+  body ul {
     list-style-type: none;
     font-size: 0;
     padding: 0; }
-  html ::-webkit-input-placeholder, body ::-webkit-input-placeholder {
+  html ::-webkit-input-placeholder,
+  body ::-webkit-input-placeholder {
     color: gray; }
-  html input, body input {
-    padding: 0.1rem 0.5rem; }
+  html *:focus,
+  body *:focus {
+    outline: none; }
   html input[type=number]::-webkit-inner-spin-button,
-  html input[type=number]::-webkit-outer-spin-button, body input[type=number]::-webkit-inner-spin-button,
+  html input[type=number]::-webkit-outer-spin-button,
+  body input[type=number]::-webkit-inner-spin-button,
   body input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0; }
-  html .page, body .page {
+  html .page,
+  body .page {
     width: 100vw;
     height: 100vh; }
-  html .btn_group button, body .btn_group button {
+  html .btn_group button,
+  body .btn_group button {
     border-radius: 0.4rem;
     padding: 0.25rem 1.5rem; }
+  html .input_group input,
+  body .input_group input {
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.5rem; }
 
 .page_login {
   background: #009487;
-  text-align: center; }
+  text-align: center;
+  padding: calc(50vh - 5rem) 0;
+  box-sizing: border-box; }
   .page_login .login_main {
     border: 0.5rem ridge cornsilk;
-    margin: calc(50vh - 7rem) 3rem; }
-    .page_login .login_main .input_gruoup input {
+    margin: 0 1rem; }
+    .page_login .login_main .input_group input {
       display: block;
       margin: 1rem auto; }
     .page_login .login_main .btn_group {

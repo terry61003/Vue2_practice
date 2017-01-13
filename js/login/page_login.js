@@ -3,7 +3,7 @@ const login = {
     template: 
     `<div class="page page_login animated zoomIn"">
         <div class="login_main">
-            <div class="input_gruoup">
+            <div class="input_group">
                 <input type="text" placeholder="account">
                 <input type="password" placeholder="password">
             </div>

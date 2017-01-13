@@ -1,0 +1,19 @@
+.page_login {
+    background: $bg-green;
+    text-align: center;
+    padding: calc(50vh - 5rem) 0;
+    box-sizing: border-box;
+    .login_main {
+        border: $border-cornsilk;
+        margin: 0 1rem;
+        .input_group {
+            input {
+                display: block;
+                margin: 1rem auto;
+            }
+        }
+        .btn_group{
+            margin: 1rem 0;
+        }
+    }
+}
