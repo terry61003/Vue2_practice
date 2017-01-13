@@ -1,0 +1,30 @@
+html, body{
+    font-family: "Noto Sans TC", "微軟正黑體";
+    font-size: 100%;
+    width: 100%;
+    height: 100%;
+    //ie scrollBar hide
+    -ms-overflow-style: none;
+    //chrome,safari scrollBar hide
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    //FireFox scrollBar hide
+    overflow: -moz-scrollbars-none;
+    ul{
+        list-style-type: none;
+        font-size: 0;
+        padding: 0;
+    }
+    ::-webkit-input-placeholder {
+        color: gray;
+    }
+    input{
+        padding: 0.1rem 0.5rem;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
