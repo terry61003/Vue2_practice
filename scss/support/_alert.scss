@@ -1,0 +1,37 @@
+.pop.alert{
+    width: 15rem;
+    font-size: 0;
+    background: $bg-skyblue;
+    left: calc(50vw - 7.5rem);
+    top: 40vh;
+    color: $text-brown;
+    .title{
+        position: relative;
+        background: $bg-red;
+        .text{
+            font-size: $font-normal;
+            color: $text-white;
+        }
+        .icon{
+            position: absolute;
+            font-size: $icon-normal;
+            display: inline-block;
+            width: $icon-normal;
+            top: 0;
+            right: 0;
+            color: $icon-color-white;
+        }
+    }
+    .content{
+        font-size: $font-normal;
+    }
+    .footer{
+        font-size: $font-normal;
+        .btn_group{
+            .confirm{
+                padding: 0.1rem 1rem;
+                margin: 0.5rem;
+            }
+        }
+    }
+}

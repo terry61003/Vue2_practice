@@ -5,5 +5,5 @@ document.addEventListener('DOMContentLoaded', function () {
     new Vue({
         router,
         template: `<router-view></router-view>`
-    }).$mount('#app');
+    }).$mount('app');
 });
