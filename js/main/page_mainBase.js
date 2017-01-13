@@ -1,6 +1,6 @@
 //Main page
 const mainBase = {
-    template: '<div><div>Main Page</div><router-view></router-view><div>',
+    template: `<div class="animated fadeIn"><div>Main Page</div><router-view></router-view><div>`,
     methods: {},
     mounted: function (){}
 };

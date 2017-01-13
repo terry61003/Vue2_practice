@@ -1,6 +1,17 @@
 //login page
 const login = {
-    template: '<div>Login Page<button v-on:click="login">GO</button></div>',
+    template: 
+    `<div class="page page_login animated zoomIn"">
+        <div class="login_main">
+            <div class="input_gruoup">
+                <input type="text" placeholder="account">
+                <input type="password" placeholder="password">
+            </div>
+            <div class="btn_group">
+                <button v-on:click="login">login</button>
+            </div>
+        </div>
+     </div>`,
     methods: {
         login: function (){
             router.push({name:'mainIndex'});

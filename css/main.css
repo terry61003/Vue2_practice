@@ -10,6 +10,7 @@ html, body {
   font-size: 100%;
   width: 100%;
   height: 100%;
+  background: #009487;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none; }
   html ::-webkit-scrollbar, body ::-webkit-scrollbar {
@@ -27,5 +28,23 @@ html, body {
   body input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0; }
+  html .page, body .page {
+    width: 100vw;
+    height: 100vh; }
+  html .btn_group button, body .btn_group button {
+    border-radius: 0.4rem;
+    padding: 0.25rem 1.5rem; }
+
+.page_login {
+  background: #009487;
+  text-align: center; }
+  .page_login .login_main {
+    border: 0.5rem ridge cornsilk;
+    margin: calc(50vh - 7rem) 3rem; }
+    .page_login .login_main .input_gruoup input {
+      display: block;
+      margin: 1rem auto; }
+    .page_login .login_main .btn_group {
+      margin: 1rem 0; }
 
 /*# sourceMappingURL=main.css.map */
