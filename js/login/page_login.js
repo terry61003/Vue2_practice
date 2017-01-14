@@ -23,7 +23,7 @@ const login = {
         login: function () {
             if (this.ac == 1 && this.ps == 1) {
                 router.push({
-                    name: 'mainIndex'
+                    name: 'index'
                 });
             } else{
                 var text = 'account:1<br>password:1';
