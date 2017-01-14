@@ -11,6 +11,7 @@ const login = {
             </div>
         </div>
         <alert></alert>
+        <block></block>
      </div>`,
     data: function () {
         return {
@@ -25,8 +26,8 @@ const login = {
                     name: 'mainIndex'
                 });
             } else{
-                var text = 'account:1<br>pasword:1';
-                Alert_window.Show('Alert Title', text);
+                var text = 'account:1<br>password:1';
+                Alert_sup.Show('Alert Title', text);
             }
         },
         focus_ps: function(){

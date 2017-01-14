@@ -33,8 +33,10 @@ body {
     .page {
         width: 100vw;
         height: 100vh;
+        font-size: 0;
     }
     .btn_group {
+        font-size: $font-normal;
         button {
             background: $btn-bg-blue;
             color: $text-green;
@@ -44,15 +46,25 @@ body {
         }
     }
     .input_group {
+        font-size: $font-normal;
         input {
             padding: 0.1rem 0.5rem;
             border-radius: 0.5rem;
         }
     }
-    .pop{
+    .pop {
         display: none;
         position: absolute;
         z-index: 500;
         top: 0;
+    }
+    .window_block {
+        display: none;
+        background: $bg-black;
+        opacity: 0.3;
+        position: absolute;
+        top: 0;
+        z-index: 100;
+        cursor: pointer;
     }
 }

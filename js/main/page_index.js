@@ -1,5 +1,5 @@
 //Index page
-const mainIndex = {
+const index = {
     template: `<div><div>Index Page</div><div>`,
     methods: {},
     mounted: function (){}

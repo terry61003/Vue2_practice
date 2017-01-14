@@ -96,40 +96,157 @@
                     });
                 }
                 return val;
+            },
+            on: function (e, func) {
+                switch (this.target.length) {
+                case 0:
+                    console.log('XD On no target');
+                    break;
+                case 1:
+                    this.target[0].addEventListener(e, func, false);
+                    break;
+                default:
+                    ForEach(this.target, function (item) {
+                        item.addEventListener(e, func, false);
+                    });
+                }
+            },
+            off: function(){
+                switch (this.target.length) {
+                case 0:
+                    console.log('XD On no target');
+                    break;
+                case 1:
+                    this.target[0].removeEventListener(e, func, false);
+                    break;
+                default:
+                    ForEach(this.target, function (item) {
+                        item.removeEventListener(e, func, false);
+                    });
+                }
+            },
+            check: function(){
+                switch (this.target.length) {
+                case 0:
+                    return false;
+                    break;
+                case 1:
+                    return true;
+                    break;
+                default:
+                    return true;
+                }
+            },
+            addClass: function(c){
+                switch (this.target.length) {
+                case 0:
+                    console.log('XD addClass no target');
+                    break;
+                case 1:
+                    this.target[0].classList.add(c);
+                    break;
+                default:
+                    ForEach(this.target, function (item) {
+                        item.classList.add(c);
+                    });
+                }
+                return this;
+            },
+            removeClass: function(c){
+                switch (this.target.length) {
+                case 0:
+                    console.log('XD addClass no target');
+                    break;
+                case 1:
+                    this.target[0].classList.remove(c);
+                    break;
+                default:
+                    ForEach(this.target, function (item) {
+                        item.classList.remove(c);
+                    });
+                }
+                return this;
             }
         },
         XD = function (v) {
             // dom target
             this.target = document.querySelectorAll(v);
             // methods
+            this.Check = method.check;
             this.Display = method.display;
             this.Html = method.html;
             this.SetAttr = method.setAttr;
             this.GetAttr = method.getAttr;
             this.GetVal = method.getVal;
             this.SetVal = method.setVal;
+            this.AddClass = method.addClass;
+            this.RemoveClass = method.removeClass;
+            this.On = method.on;
+            this.Off = method.off;
 
             return this;
         },
-        Alert_window = {
+        Alert_sup = {
             dom: {
                 window: '#alert_window',
                 title: '#alert_title',
                 content: '#alert_content',
-                btn: '#alert_btn'
+                btn: '#alert_btn',
+                block: '#window_block',
+                status: false
             },
-            Show: function (title,content) {
-                XD(Alert_window.dom.title).Html(title);
-                XD(Alert_window.dom.content).Html(content);
-                XD(Alert_window.dom.window).Display('block');
+            Show: function (title, content) {
+                if(XD(this.dom.block).Check()){
+                    XD(this.dom.block).Display('block');
+                }
+                XD(this.dom.title).Html(title);
+                XD(this.dom.content).Html(content);
+                XD(this.dom.window).Display('block');
+                this.dom.status = true;
             },
             Hide: function () {
-                XD(Alert_window.dom.title).Html(null);
-                XD(Alert_window.dom.content).Html(null);
-                XD(Alert_window.dom.window).Display('none');
+                if(XD(this.dom.block).Check()){
+                    XD(this.dom.block).SetAttr('style',null);
+                }
+                XD(this.dom.title).Html(null);
+                XD(this.dom.content).Html(null);
+                XD(this.dom.window).SetAttr('style',null);
+                this.dom.status = false;
+            }
+        },
+        left_menu_sup = {
+            dom:{
+                menu: '#left_menu',
+                block: '#window_block',
+                status: false
+            },
+            Show: function(){
+                if(XD(this.dom.block).Check()){
+                    XD(this.dom.block).Display('block');
+                }
+                XD(this.dom.menu)
+                    .AddClass('animated')
+                    .AddClass('slideInLeft')
+                    .Display('block');
+                this.dom.status = true;
+            },
+            Hide: function(){
+                if(XD(this.dom.block).Check()){
+                    XD(this.dom.block).SetAttr('style',null);
+                }
+                XD(this.dom.menu)
+                    .RemoveClass('slideInLeft')
+                    .AddClass('slideOutLeft');
+                setTimeout(function(){
+                    XD(left_menu_sup.dom.menu)
+                        .RemoveClass('slideOutLeft')
+                        .SetAttr('style',null);
+                },1000);
+                this.dom.status = false;
             }
         };
     this.ForEach = ForEach;
-    this.XD = XD;
-    this.Alert_window = Alert_window;
-}).call();
+    this.XD = new XD;
+    this.Alert_sup = Alert_sup;
+    this.left_menu_sup = left_menu_sup;
+})();

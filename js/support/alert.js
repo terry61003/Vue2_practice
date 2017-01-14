@@ -17,7 +17,7 @@ const Alert = {
      </div>`,
     methods: {
         close: function(){
-            Alert_window.Hide();
+            Alert_sup.Hide();
         }
     },
     mounted: function (){}

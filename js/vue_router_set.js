@@ -4,12 +4,12 @@ const router = new VueRouter({
         { path: '/', redirect:'/login'},
         { path: '/main', component: mainBase,
          children: [{
-             path: 'mainIndex',
-             component: mainIndex,
-             name: 'mainIndex'
+             path: 'index',
+             component: index,
+             name: 'index'
          },{
              path: '*',
-             redirect:'mainIndex'
+             redirect:'index'
          }]},
         { path: '/login', component: login ,name: 'login',
          children: [{
