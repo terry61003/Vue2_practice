@@ -56,7 +56,9 @@ body {
     html .input_group input,
     body .input_group input {
       padding: 0.1rem 0.5rem;
-      border-radius: 0.5rem; }
+      border-radius: 0.5rem;
+      width: 30vw;
+      min-width: 8rem; }
   html .pop,
   body .pop {
     display: none;

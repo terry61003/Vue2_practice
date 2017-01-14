@@ -5,6 +5,24 @@
             });
         },
         method = {
+            Init: function (v) {
+                // dom target
+                this.target = v;
+                // methods
+                this.Check = method.check;
+                this.Display = method.display;
+                this.Html = method.html;
+                this.SetAttr = method.setAttr;
+                this.GetAttr = method.getAttr;
+                this.GetVal = method.getVal;
+                this.SetVal = method.setVal;
+                this.AddClass = method.addClass;
+                this.RemoveClass = method.removeClass;
+                this.On = method.on;
+                this.Off = method.off;
+
+                return this;
+            },
             display: function (d) {
                 switch (this.target.length) {
                 case 0:
@@ -111,7 +129,7 @@
                     });
                 }
             },
-            off: function(){
+            off: function () {
                 switch (this.target.length) {
                 case 0:
                     console.log('XD On no target');
@@ -125,7 +143,7 @@
                     });
                 }
             },
-            check: function(){
+            check: function () {
                 switch (this.target.length) {
                 case 0:
                     return false;
@@ -137,7 +155,7 @@
                     return true;
                 }
             },
-            addClass: function(c){
+            addClass: function (c) {
                 switch (this.target.length) {
                 case 0:
                     console.log('XD addClass no target');
@@ -152,7 +170,7 @@
                 }
                 return this;
             },
-            removeClass: function(c){
+            removeClass: function (c) {
                 switch (this.target.length) {
                 case 0:
                     console.log('XD addClass no target');
@@ -169,22 +187,7 @@
             }
         },
         XD = function (v) {
-            // dom target
-            this.target = document.querySelectorAll(v);
-            // methods
-            this.Check = method.check;
-            this.Display = method.display;
-            this.Html = method.html;
-            this.SetAttr = method.setAttr;
-            this.GetAttr = method.getAttr;
-            this.GetVal = method.getVal;
-            this.SetVal = method.setVal;
-            this.AddClass = method.addClass;
-            this.RemoveClass = method.removeClass;
-            this.On = method.on;
-            this.Off = method.off;
-
-            return this;
+            return new method.Init(document.querySelectorAll(v));
         },
         Alert_sup = {
             dom: {
@@ -196,7 +199,7 @@
                 status: false
             },
             Show: function (title, content) {
-                if(XD(this.dom.block).Check()){
+                if (XD(this.dom.block).Check()) {
                     XD(this.dom.block).Display('block');
                 }
                 XD(this.dom.title).Html(title);
@@ -205,23 +208,23 @@
                 this.dom.status = true;
             },
             Hide: function () {
-                if(XD(this.dom.block).Check()){
-                    XD(this.dom.block).SetAttr('style',null);
+                if (XD(this.dom.block).Check()) {
+                    XD(this.dom.block).SetAttr('style', null);
                 }
                 XD(this.dom.title).Html(null);
                 XD(this.dom.content).Html(null);
-                XD(this.dom.window).SetAttr('style',null);
+                XD(this.dom.window).SetAttr('style', null);
                 this.dom.status = false;
             }
         },
         left_menu_sup = {
-            dom:{
+            dom: {
                 menu: '#left_menu',
                 block: '#window_block',
                 status: false
             },
-            Show: function(){
-                if(XD(this.dom.block).Check()){
+            Show: function () {
+                if (XD(this.dom.block).Check()) {
                     XD(this.dom.block).Display('block');
                 }
                 XD(this.dom.menu)
@@ -230,23 +233,23 @@
                     .Display('block');
                 this.dom.status = true;
             },
-            Hide: function(){
-                if(XD(this.dom.block).Check()){
-                    XD(this.dom.block).SetAttr('style',null);
+            Hide: function () {
+                if (XD(this.dom.block).Check()) {
+                    XD(this.dom.block).SetAttr('style', null);
                 }
                 XD(this.dom.menu)
                     .RemoveClass('slideInLeft')
                     .AddClass('slideOutLeft');
-                setTimeout(function(){
+                setTimeout(function () {
                     XD(left_menu_sup.dom.menu)
                         .RemoveClass('slideOutLeft')
-                        .SetAttr('style',null);
-                },1000);
+                        .SetAttr('style', null);
+                }, 1000);
                 this.dom.status = false;
             }
         };
     this.ForEach = ForEach;
-    this.XD = new XD;
+    this.XD = XD;
     this.Alert_sup = Alert_sup;
     this.left_menu_sup = left_menu_sup;
 })();
