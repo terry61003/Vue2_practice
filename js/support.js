@@ -14,6 +14,7 @@
                 this.Html = method.html;
                 this.SetAttr = method.setAttr;
                 this.GetAttr = method.getAttr;
+                this.RemoveAttr = method.removeAttr;
                 this.GetVal = method.getVal;
                 this.SetVal = method.setVal;
                 this.AddClass = method.addClass;
@@ -64,6 +65,21 @@
                 default:
                     ForEach(this.target, function (item) {
                         item.setAttribute(a, v);
+                    });
+                }
+                return this;
+            },
+            removeAttr: function (a) {
+                switch (this.target.length) {
+                case 0:
+                    console.log('XD removeAttr no target');
+                    break;
+                case 1:
+                    this.target[0].removeAttribute(a);
+                    break;
+                default:
+                    ForEach(this.target, function (item) {
+                        item.removeAttribute(a);
                     });
                 }
                 return this;
@@ -198,10 +214,20 @@
                 block: '#window_block',
                 status: false
             },
-            Show: function (title, content) {
+            Show: function (title, content, status) {
                 if (XD(this.dom.block).Check()) {
                     XD(this.dom.block).Display('block');
                 }
+                switch(status){
+                    case 'tip':
+                        XD(this.dom.window).AddClass('tip');
+                        break;
+                    case 'error':
+                        XD(this.dom.window).RemoveClass('tip');
+                        break;
+                    default:
+                        console.log('forget alert status');
+                };
                 XD(this.dom.title).Html(title);
                 XD(this.dom.content).Html(content);
                 XD(this.dom.window).Display('block');
@@ -209,11 +235,11 @@
             },
             Hide: function () {
                 if (XD(this.dom.block).Check()) {
-                    XD(this.dom.block).SetAttr('style', null);
+                    XD(this.dom.block).RemoveAttr('style');
                 }
                 XD(this.dom.title).Html(null);
                 XD(this.dom.content).Html(null);
-                XD(this.dom.window).SetAttr('style', null);
+                XD(this.dom.window).RemoveAttr('style');
                 this.dom.status = false;
             }
         },
@@ -235,7 +261,7 @@
             },
             Hide: function () {
                 if (XD(this.dom.block).Check()) {
-                    XD(this.dom.block).SetAttr('style', null);
+                    XD(this.dom.block).RemoveAttr('style');
                 }
                 XD(this.dom.menu)
                     .RemoveClass('slideInLeft')
@@ -243,7 +269,7 @@
                 setTimeout(function () {
                     XD(left_menu_sup.dom.menu)
                         .RemoveClass('slideOutLeft')
-                        .SetAttr('style', null);
+                        .RemoveAttr('style');
                 }, 1000);
                 this.dom.status = false;
             }

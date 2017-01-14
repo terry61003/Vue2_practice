@@ -81,7 +81,8 @@ body {
   background: skyblue;
   left: calc(50vw - 7.5rem);
   top: 40vh;
-  color: brown; }
+  color: brown;
+  text-align: center; }
   .pop.alert .title {
     position: relative;
     background: red; }
@@ -104,10 +105,16 @@ body {
       padding: 0.1rem 1rem;
       margin: 0.5rem; }
 
+.pop.alert.tip .title {
+  background: #009487; }
+
+.pop.alert.tip .content {
+  color: #253137; }
+
 .page_login {
   background: #009487;
   text-align: center;
-  padding: calc(50vh - 5rem) 0;
+  padding: calc(50vh - 8rem) 0 0 0;
   box-sizing: border-box; }
   .page_login .login_main {
     border: 0.5rem ridge cornsilk;
@@ -118,11 +125,9 @@ body {
     .page_login .login_main .btn_group {
       margin: 1rem 0; }
 
-.page_main > div {
-  display: inline-block;
-  vertical-align: top; }
-
 .page_main .left_menu {
+  display: inline-block;
+  vertical-align: top;
   min-width: 15rem;
   height: 100vh;
   overflow-y: auto;
@@ -143,10 +148,18 @@ body {
       padding: 0.25rem 0 0.25rem 2rem;
       color: white;
       cursor: pointer; }
+    .page_main .left_menu .menu_group .sub_menu.show {
+      display: block; }
     .page_main .left_menu .menu_group .sub_menu.active {
       background: skyblue; }
 
+.page_main .left_menu.animated {
+  -webkit-animation-duration: .5s;
+  animation-duration: .5s; }
+
 .page_main .sub_page {
+  display: inline-block;
+  vertical-align: top;
   font-size: 1.5rem;
   width: calc(100vw - 15rem);
   text-align: center; }

@@ -1,9 +1,7 @@
 .page_main {
-    >div {
+    .left_menu {
         display: inline-block;
         vertical-align: top;
-    }
-    .left_menu {
         min-width: 15rem;
         height: 100vh;
         overflow-y: auto;
@@ -27,12 +25,21 @@
                 color: $text-white;
                 cursor: pointer;
             }
+            .sub_menu.show{
+                display: block;
+            }
             .sub_menu.active {
                 background: $bg-skyblue;
             }
         }
     }
+    .left_menu.animated{
+        -webkit-animation-duration: .5s;
+        animation-duration: .5s;
+    }
     .sub_page {
+        display: inline-block;
+        vertical-align: top;
         font-size: $font-normal;
         width: calc(100vw - 15rem);
         text-align: center;
