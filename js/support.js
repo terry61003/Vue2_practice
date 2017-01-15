@@ -218,15 +218,15 @@
                 if (XD(this.dom.block).Check()) {
                     XD(this.dom.block).Display('block');
                 }
-                switch(status){
-                    case 'tip':
-                        XD(this.dom.window).AddClass('tip');
-                        break;
-                    case 'error':
-                        XD(this.dom.window).RemoveClass('tip');
-                        break;
-                    default:
-                        console.log('forget alert status');
+                switch (status) {
+                case 'tip':
+                    XD(this.dom.window).AddClass('tip');
+                    break;
+                case 'error':
+                    XD(this.dom.window).RemoveClass('tip');
+                    break;
+                default:
+                    console.log('forget alert status');
                 };
                 XD(this.dom.title).Html(title);
                 XD(this.dom.content).Html(content);
@@ -250,28 +250,31 @@
                 status: false
             },
             Show: function () {
-                if (XD(this.dom.block).Check()) {
-                    XD(this.dom.block).Display('block');
+                if (!this.dom.status) {
+                    if (XD(this.dom.block).Check()) {
+                        XD(this.dom.block).Display('block');
+                    }
+                    XD(this.dom.menu)
+                        .AddClass('slideInLeft')
+                        .Display('block');
+                    this.dom.status = true;
                 }
-                XD(this.dom.menu)
-                    .AddClass('animated')
-                    .AddClass('slideInLeft')
-                    .Display('block');
-                this.dom.status = true;
             },
             Hide: function () {
-                if (XD(this.dom.block).Check()) {
-                    XD(this.dom.block).RemoveAttr('style');
+                if (this.dom.status) {
+                    if (XD(this.dom.block).Check()) {
+                        XD(this.dom.block).RemoveAttr('style');
+                    }
+                    XD(this.dom.menu)
+                        .RemoveClass('slideInLeft')
+                        .AddClass('slideOutLeft');
+                    setTimeout(function () {
+                        XD(left_menu_sup.dom.menu)
+                            .RemoveClass('slideOutLeft')
+                            .RemoveAttr('style');
+                        left_menu_sup.dom.status = false;
+                    }, 1000);
                 }
-                XD(this.dom.menu)
-                    .RemoveClass('slideInLeft')
-                    .AddClass('slideOutLeft');
-                setTimeout(function () {
-                    XD(left_menu_sup.dom.menu)
-                        .RemoveClass('slideOutLeft')
-                        .RemoveAttr('style');
-                }, 1000);
-                this.dom.status = false;
             }
         };
     this.ForEach = ForEach;

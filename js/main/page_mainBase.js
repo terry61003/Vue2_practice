@@ -2,7 +2,7 @@
 const mainBase = {
     template: 
     `<div class="page page_main animated fadeIn">
-        <div class="left_menu" id="left_menu">
+        <div class="left_menu animated" id="left_menu">
             <ul>
                 <li class="menu_group" v-for="(item, index) in menu">
                     <a class="main_menu" v-bind:type="index" v-on:click="main_menu_link">{{item.name}}</a>
@@ -37,6 +37,7 @@ const mainBase = {
     },
     methods: {
         show_menu: function(){
+            console.log('開啟');
             left_menu_sup.Show();
         },
         main_menu_link: function(e){
