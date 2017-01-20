@@ -14,16 +14,21 @@ Download: http://brackets.io/
 # Prepare use Vue2 and Vue-Router:
 
 Library:
-*Animate.css
- Github: https://github.com/daneden/animate.css
-*fontawsome
- Website: http://fontawesome.io/
-*Normalize.css
- Github: https://github.com/necolas/normalize.css
-*Vue js
- Github: https://github.com/vuejs/vue
-*Vue-Router js
- Github: https://github.com/vuejs/vue-router
+
+* Animate.css
+  Github: https://github.com/daneden/animate.css
+ 
+* fontawsome
+  Website: http://fontawesome.io/
+ 
+* Normalize.css
+  Github: https://github.com/necolas/normalize.css
+ 
+* Vue js
+  Github: https://github.com/vuejs/vue
+ 
+* Vue-Router js
+  Github: https://github.com/vuejs/vue-router
 
 ## 1. Download node.js:
 
