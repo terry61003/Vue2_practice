@@ -277,8 +277,8 @@
                 }
             }
         };
-    this.ForEach = ForEach;
-    this.XD = XD;
-    this.Alert_sup = Alert_sup;
-    this.left_menu_sup = left_menu_sup;
-})();
+    window.ForEach = ForEach;
+    window.XD = XD;
+    window.Alert_sup = Alert_sup;
+    window.left_menu_sup = left_menu_sup;
+}.call());
