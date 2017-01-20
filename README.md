@@ -3,10 +3,10 @@ Practice Vue2
 
 Demo: https://kenfront.github.io/Vue2_practice/
 
-code editor: Brackets( auto compress scss)
-Brackets plugins: Brackets SASS,Brackets Sass Hints
-Setting: .brackets.json(Github: https://github.com/jasonsanjose/brackets-sass)
-Download: http://brackets.io/
+-code editor: Brackets( auto compress scss)
+-Brackets plugins: Brackets SASS,Brackets Sass Hints
+-Setting file: .brackets.json(Github: https://github.com/jasonsanjose/brackets-sass)
+-Download: http://brackets.io/
 
 # Prepare use Vue2 and Vue-Router:
 
