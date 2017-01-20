@@ -5,6 +5,14 @@
    font-weight: 500;
    src: url(../lib/font/NotoSansTC-Medium.otf);
 }
+//normalize
+@import '../lib/normalize/normalize.css';
+
+//font-awesome
+@import '../lib/font-awesome/css/font-awesome.min.css';
+
+//animate
+@import '../lib/animate/animate.min.css';
 
 $bg-green: #009487;
 $bg-skyblue: skyblue;
