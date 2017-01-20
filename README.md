@@ -54,7 +54,7 @@ index.html, *.js, *.scss...
 
 * uglifyJsPlugin For compress js.
 
- * babel-loader For transpiling JavaScript files(Github: https://github.com/babel/babel-loader)
+* babel-loader For transpiling JavaScript files(Github: https://github.com/babel/babel-loader)
 
 ## 7. Output bundle.js in project(path:Vue2_practice) by command line:
 
