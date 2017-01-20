@@ -46,9 +46,9 @@ Download: https://nodejs.org/en/
 
     npm install babel-loader babel-core babel-preset-es2015 webpack --save-dev
 
-## 5. Create project
+## 5. Create project file
 
-index.html, *.js, *.scss...
+Ex: index.html, *.js, *.scss...
 
 ## 6. Set webpack.config.js in project(path: Vue2_practice/webpack.config.js)
 
