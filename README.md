@@ -3,11 +3,11 @@ Practice Vue2
 
 Demo: https://kenfront.github.io/Vue2_practice/
 
-*code editor: Brackets( auto compress scss)
+ * code editor: Brackets( auto compress scss)
 
-*Brackets plugins: Brackets SASS,Brackets Sass Hints
+ * Brackets plugins: Brackets SASS,Brackets Sass Hints
 
-*Setting file: .brackets.json(Github: https://github.com/jasonsanjose/brackets-sass)
+ * Setting file: .brackets.json(Github: https://github.com/jasonsanjose/brackets-sass)
 
 Download: http://brackets.io/
 
@@ -52,9 +52,9 @@ index.html, *.js, *.scss...
 
 ## 6. Set webpack.config.js in project(path: Vue2_practice/webpack.config.js)
 
-*uglifyJsPlugin For compress js.
+* uglifyJsPlugin For compress js.
 
-*babel-loader For transpiling JavaScript files(Github: https://github.com/babel/babel-loader)
+ * babel-loader For transpiling JavaScript files(Github: https://github.com/babel/babel-loader)
 
 ## 7. Output bundle.js in project(path:Vue2_practice) by command line:
 
