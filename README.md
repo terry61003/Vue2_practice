@@ -3,23 +3,26 @@ Practice Vue2
 
 Demo: https://kenfront.github.io/Vue2_practice/
 
--code editor: Brackets( auto compress scss)
--Brackets plugins: Brackets SASS,Brackets Sass Hints
--Setting file: .brackets.json(Github: https://github.com/jasonsanjose/brackets-sass)
--Download: http://brackets.io/
+*code editor: Brackets( auto compress scss)
+
+*Brackets plugins: Brackets SASS,Brackets Sass Hints
+
+*Setting file: .brackets.json(Github: https://github.com/jasonsanjose/brackets-sass)
+
+Download: http://brackets.io/
 
 # Prepare use Vue2 and Vue-Router:
 
 Library:
--Animate.css
+*Animate.css
  Github: https://github.com/daneden/animate.css
--fontawsome
+*fontawsome
  Website: http://fontawesome.io/
--Normalize.css
+*Normalize.css
  Github: https://github.com/necolas/normalize.css
--Vue js
+*Vue js
  Github: https://github.com/vuejs/vue
--Vue-Router js
+*Vue-Router js
  Github: https://github.com/vuejs/vue-router
 
 ## 1. Download node.js:
@@ -44,9 +47,9 @@ index.html, *.js, *.scss...
 
 ## 6. Set webpack.config.js in project(path: Vue2_practice/webpack.config.js)
 
--uglifyJsPlugin For compress js.
+*uglifyJsPlugin For compress js.
 
--babel-loader For transpiling JavaScript files(Github: https://github.com/babel/babel-loader)
+*babel-loader For transpiling JavaScript files(Github: https://github.com/babel/babel-loader)
 
 ## 7. Output bundle.js in project(path:Vue2_practice) by command line:
 
