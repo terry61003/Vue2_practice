@@ -319,7 +319,8 @@
                         ctx.drawImage(img, 0, 0, img.width, img.height, 0, 0, canvas.width, canvas.height);
                     }
                 });
-                return canvas.toDataURL("image/jpeg", 0.8);
+                return canvas.toDataURL("image/png");
+                //toDataURL('imageType','imageQuality')
             }
         };
     window.ForEach = ForEach;
