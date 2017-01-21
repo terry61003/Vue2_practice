@@ -2,7 +2,7 @@
     //login page
     const login = {
         template: 
-        `<div class="page_login animated zoomIn"">
+        `<div class="page_login animated zoomIn">
             <div class="login_main">
                 <div class="input_group">
                     <input type="text" v-model="ac" placeholder="account" v-on:keyup.enter="focus_ps">
@@ -24,10 +24,10 @@
                 var text;
                 if (this.ac == 1 && this.ps == 1) {
                     text = 'success';
-                    Alert_sup.Show('Alert Title', text, 'tip');
+                    Vue_sup.Alert_sup.Show('Alert Title', text, 'tip');
                 } else {
                     text = 'account:1<br>password:1';
-                    Alert_sup.Show('Alert Title', text, 'error');
+                    Vue_sup.Alert_sup.Show('Alert Title', text, 'error');
                 }
             },
             focus_ps: function () {

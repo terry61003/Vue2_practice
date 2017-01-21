@@ -17,7 +17,7 @@ const Alert = {
      </div>`,
     methods: {
         close: function(){
-            Alert_sup.Hide();
+            Vue_sup.Alert_sup.Hide();
         }
     },
     mounted: function (){}

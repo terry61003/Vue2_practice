@@ -1,0 +1,29 @@
+.page_upload_img{
+    .img{
+        max-width: 80vw;
+        margin: 0 auto;
+        img{
+            max-width: 100%;
+        }
+    }
+    .upload_block{
+        position: relative;
+        background: $bg-gray;
+        height: 25vh;
+        margin: 1rem;
+        input[type="file"]{
+            cursor: pointer;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        span{
+            line-height: 25vh;
+            font-size: $font-big;
+            color: $text-white;
+        }
+    }
+}

@@ -21,6 +21,9 @@ Library:
 * fontawsome
   Website: http://fontawesome.io/
  
+* EXIF js
+  Github: https://github.com/exif-js/exif-js
+ 
 * Normalize.css
   Github: https://github.com/necolas/normalize.css
  

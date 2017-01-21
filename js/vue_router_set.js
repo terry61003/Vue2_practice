@@ -14,6 +14,10 @@
                  component: login,
                  name: 'login'
              },{
+                 path: 'uploadImg',
+                 component: uploadImg,
+                 name: 'uploadImg'
+             },{
                  path: '*',
                  redirect:'index'
              }]}
