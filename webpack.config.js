@@ -9,6 +9,7 @@ module.exports = {
             "./js/support/windowBlock.js",
             "./js/left_example/page_login.js",
             "./js/left_example/page_uploadImg.js",
+            "./js/left_example/page_carousel.js",
             "./js/main/page_mainBase.js",
             "./js/main/page_authorInfo.js",
             "./js/vue_router_set.js",

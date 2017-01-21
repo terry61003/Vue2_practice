@@ -33,6 +33,9 @@
                      },{
                          name: 'upload img',
                          href: '#/uploadImg'
+                     },{
+                         name: 'carousel',
+                         href: '#/carousel'
                      }]
                     },
                     {name: 'info',href: null,

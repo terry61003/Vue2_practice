@@ -18,6 +18,10 @@
                  component: uploadImg,
                  name: 'uploadImg'
              },{
+                 path: 'carousel',
+                 component: carousel,
+                 name: 'carousel'
+             },{
                  path: '*',
                  redirect:'authorInfo'
              }]}

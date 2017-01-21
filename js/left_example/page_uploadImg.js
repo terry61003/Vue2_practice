@@ -1,5 +1,5 @@
 (function () {
-    //login page
+    //upload img
     const uploadImg = {
         template: 
         `<div class="page_upload_img animated zoomIn">

@@ -53,7 +53,8 @@
 	__webpack_require__(7);
 	__webpack_require__(8);
 	__webpack_require__(9);
-	module.exports = __webpack_require__(10);
+	__webpack_require__(10);
+	module.exports = __webpack_require__(11);
 
 
 /***/ },
@@ -1296,7 +1297,7 @@
 	'use strict';
 
 	(function () {
-	    //login page
+	    //upload img
 	    var uploadImg = {
 	        template: '<div class="page_upload_img animated zoomIn">\n            <div class="img" v-show="showImg">\n                <img v-bind:src="img">\n            </div>\n            <div class="upload_block">\n                <input type="file" accept="image/*" v-on:change="show_img">\n                <span>Upload Image</span>\n            </div>\n        </div>',
 	        data: function data() {
@@ -1337,6 +1338,81 @@
 	'use strict';
 
 	(function () {
+	    //carousel
+	    var carousel = {
+	        template: '<div class="page_upload_img page_carousel animated zoomIn">\n            <div class="img" v-show="showCarousel">\n                <img v-for="item in carouselImg" v-show="item.show" v-bind="{ \'src\': item.src, \'class\': item.class }">\n                <div class="carousel_count">\n                    <div v-bind:class="[\'count\', { active: item.show}]" v-for="item in carouselImg"></div>\n                </div>\n            </div>\n            <div class="upload_block">\n                <input type="file" accept="image/*" v-on:change="show_img">\n                <span>Upload Image</span>\n            </div>\n        </div>',
+	        data: function data() {
+	            return {
+	                carouselImg: [],
+	                showCarousel: false,
+	                carouselIndex: 0,
+	                carouselMax: 0
+	            };
+	        },
+	        methods: {
+	            show_img: function show_img(e) {
+	                if (this.carouselImg.length < 6) {
+	                    var reader = new FileReader(),
+	                        file = e.target.files[0],
+	                        self = this,
+	                        img = document.createElement('img');
+	                    reader.onload = function () {
+	                        img.onload = function () {
+	                            if (self.carouselImg.length === 0) {
+	                                self.carouselImg.push({
+	                                    src: Vue_sup.img_rotate(img, 300),
+	                                    show: true,
+	                                    class: 'animated slideInRight'
+	                                });
+	                            } else {
+	                                self.carouselImg.push({
+	                                    src: Vue_sup.img_rotate(img, 300),
+	                                    show: false,
+	                                    class: 'animated slideInRight'
+	                                });
+	                            }
+	                            self.carouselMax += 1;
+	                            self.showCarousel = true;
+	                        };
+	                        img.src = reader.result;
+	                    };
+	                    if (file && file.type.match('image.*')) {
+	                        reader.readAsDataURL(file);
+	                    }
+	                } else {
+	                    Vue_sup.Alert_sup.Show('Alert', 'the maximum of image is 6.');
+	                }
+	            }
+	        },
+	        watch: {
+	            carouselMax: function carouselMax() {
+	                var self = this;
+	                if (this.carouselMax === 2) {
+	                    setInterval(function () {
+	                        if (self.carouselIndex < self.carouselMax - 1) {
+	                            self.carouselImg[self.carouselIndex].show = false;
+	                            self.carouselIndex += 1;
+	                            self.carouselImg[self.carouselIndex].show = true;
+	                        } else {
+	                            self.carouselImg[self.carouselIndex].show = false;
+	                            self.carouselIndex = 0;
+	                            self.carouselImg[self.carouselIndex].show = true;
+	                        }
+	                    }, 3000);
+	                }
+	            }
+	        }
+	    };
+	    window.carousel = carousel;
+	}).call();
+
+/***/ },
+/* 8 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	(function () {
 	    //Main page
 	    var mainBase = {
 	        template: '<div class="page page_main animated fadeIn">\n            <div class="left_menu animated" id="left_menu">\n                <ul>\n                    <li class="menu_group" v-for="(item, index) in menu">\n                        <a class="main_menu" v-bind="{ \'type\': index, \'href\': item.href }" v-on:click="main_menu_link">{{item.name}}</a>\n                        <a class="sub_menu" v-for="(subItem, subIndex) in item.sub" v-on:click="sub_menu_link" v-bind="{ \'type\': index, \'href\': subItem.href, \'subType\': subIndex }">\n                        {{subItem.name}}\n                        </a>\n                    </li>\n                </ul>\n            </div>\n            <div class="sub_page">\n                <div class="left_menu_icon" v-on:click="show_menu">\n                    <i class="fa fa-bars" aria-hidden="true"></i>\n                </div>\n                <div class="page_title">{{pageTitle}}</div>\n                <router-view></router-view>\n            </div>\n            <alert></alert>\n            <block></block>\n        </div>',
@@ -1349,6 +1425,9 @@
 	                    }, {
 	                        name: 'upload img',
 	                        href: '#/uploadImg'
+	                    }, {
+	                        name: 'carousel',
+	                        href: '#/carousel'
 	                    }]
 	                }, { name: 'info', href: null,
 	                    sub: [{
@@ -1406,7 +1485,7 @@
 	}).call();
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1427,7 +1506,7 @@
 	}).call();
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -1450,6 +1529,10 @@
 	                component: uploadImg,
 	                name: 'uploadImg'
 	            }, {
+	                path: 'carousel',
+	                component: carousel,
+	                name: 'carousel'
+	            }, {
 	                path: '*',
 	                redirect: 'authorInfo'
 	            }] }]
@@ -1458,7 +1541,7 @@
 	}).call();
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 	'use strict';
