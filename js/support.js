@@ -177,11 +177,15 @@
                     console.log('XD addClass no target');
                     break;
                 case 1:
-                    this.target[0].classList.add(c);
+                    if (!this.target[0].classList.contains(c)) {
+                        this.target[0].classList.add(c);
+                    }
                     break;
                 default:
                     ForEach(this.target, function (item) {
-                        item.classList.add(c);
+                        if (!item.classList.contains(c)) {
+                            item.classList.add(c);
+                        }
                     });
                 }
                 return this;
@@ -192,11 +196,16 @@
                     console.log('XD addClass no target');
                     break;
                 case 1:
-                    this.target[0].classList.remove(c);
+                    if (this.target[0].classList.contains(c)) {
+                        this.target[0].classList.remove(c);
+                    }
                     break;
                 default:
                     ForEach(this.target, function (item) {
                         item.classList.remove(c);
+                        if (item.classList.contains(c)) {
+                            item.classList.remove(c);
+                        }
                     });
                 }
                 return this;
@@ -274,11 +283,11 @@
                                 .RemoveClass('slideOutLeft')
                                 .RemoveAttr('style');
                             Vue_sup.left_menu_sup.dom.status = false;
-                        }, 1000);
+                        }, 500);
                     }
                 }
             },
-            img_rotate: function (img,maxEdge) {
+            img_rotate: function (img, maxEdge) {
                 var canvas = document.createElement('canvas'),
                     ctx = canvas.getContext("2d");
                 EXIF.getData(img, function () {

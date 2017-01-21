@@ -38,10 +38,10 @@
                     {name: 'info',href: null,
                      sub: [{
                          name: 'author',
-                         href: null
+                         href: '#/authorInfo'
                      }]
                     },
-                    {name: 'thinking',href: '#/index'}
+                    {name: 'thinking',href: '#/authorInfo'}
                 ],
                 pageTitle: this.$route.path.substring(1)
             };
@@ -89,7 +89,8 @@
                 }
             }
         },
-        mounted: function () {}
+        mounted: function () {
+        }
     };
     window.mainBase = mainBase;
 }.call());

@@ -25,7 +25,7 @@
                     img = document.createElement('img');
                 reader.onload = function () {
                     img.onload = function () {
-                        self.img = Vue_sup.img_rotate(img,300);
+                        self.img = Vue_sup.img_rotate(img,1000);
                         self.showImg = true;
                     };
                     img.src = reader.result;

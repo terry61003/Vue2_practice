@@ -6,9 +6,9 @@
             { path: '/', redirect:'/index'},
             { path: '/', component: mainBase,
              children: [{
-                 path: 'index',
-                 component: index,
-                 name: 'index'
+                 path: 'authorInfo',
+                 component: authorInfo,
+                 name: 'authorInfo'
              },{
                  path: 'login',
                  component: login,
@@ -19,7 +19,7 @@
                  name: 'uploadImg'
              },{
                  path: '*',
-                 redirect:'index'
+                 redirect:'authorInfo'
              }]}
         ]
     });

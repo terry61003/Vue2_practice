@@ -8,9 +8,9 @@ module.exports = {
             "./js/support/alert.js",
             "./js/support/windowBlock.js",
             "./js/left_example/page_login.js",
-            "./js/left_example/page_upload_img.js",
+            "./js/left_example/page_uploadImg.js",
             "./js/main/page_mainBase.js",
-            "./js/main/page_index.js",
+            "./js/main/page_authorInfo.js",
             "./js/vue_router_set.js",
             "./js/main.js"
         ]
@@ -29,12 +29,5 @@ module.exports = {
                 }
             }
         ]
-    },
-    plugins: [
-        new uglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-  ]
+    }
 };
