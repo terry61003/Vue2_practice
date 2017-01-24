@@ -1,19 +1,12 @@
 var webpack = require('webpack');
+var path = require('path');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 module.exports = {
     entry: {
         all: [
-            "./lib/exif/exif.js",
-            "./js/support.js",
             "./js/support/alert.js",
             "./js/support/windowBlock.js",
-            "./js/left_example/page_login.js",
-            "./js/left_example/page_uploadImg.js",
-            "./js/left_example/page_carousel.js",
-            "./js/main/page_mainBase.js",
-            "./js/main/page_authorInfo.js",
-            "./js/vue_router_set.js",
-            "./js/main.js"
+            "./js/vue_router_set.js"
         ]
     },
     output: {
@@ -30,9 +23,9 @@ module.exports = {
             }
         ]
     },
-    plugins: [
+    plugins:[
         new uglifyJsPlugin({
-            compress: {
+            compress:{
                 warnings: false
             }
         })

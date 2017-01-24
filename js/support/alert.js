@@ -1,3 +1,5 @@
+import {Vue_sup} from '../support';
+import Vue from '../../lib/vue/vue';
 //alert
 const Alert = {
     template: 

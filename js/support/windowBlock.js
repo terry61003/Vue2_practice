@@ -1,3 +1,5 @@
+import {Vue_sup} from '../support';
+import Vue from '../../lib/vue/vue';
 //block
 const Block = {
     template: 
